@@ -5,6 +5,47 @@ import fs from "fs";
 import fsPromise from "fs/promises";
 
 const args = process.argv.slice(2)
+const stylesheet = `* {
+    font-family: sans-serif;
+}
+
+pre>code {
+    font-family: monospace;
+}
+pre {
+    padding: 0.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow-x: scroll;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.wrapper main {
+    width: 65ch;
+}
+
+.wrapper aside {
+    width: 20ch;
+}
+
+@media (max-width: 600px) {
+    .wrapper {
+        flex-direction: column;
+        max-width: 100%;
+    }
+    .wrapper main {
+        width: unset;
+        max-width: 100%;
+    }
+    .wrapper aside {
+        width: unset;
+        max-width: 100%;
+    }
+}`
 const sidebar = `<h4><a href="./index.html">Tawa</a></h4>
 
 <h5>Über</h5>
@@ -29,6 +70,7 @@ Promise.all(args.map(async (arg) => {
     const dom = new jsdom.JSDOM(data)
 
     const doku = dom.window.document
+    doku.querySelector("style").innerHTML = stylesheet
     doku.querySelectorAll("aside").forEach((elm) => {
         elm.innerHTML = sidebar + elm.innerHTML
     })

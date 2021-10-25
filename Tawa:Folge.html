@@ -4,33 +4,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TawaDoku</title>
 
-    <style>
-        * {
-            font-family: sans-serif;
-        }
+    <style>* {
+    font-family: sans-serif;
+}
 
-        pre>code {
-            font-family: monospace;
-        }
-        pre {
-            padding: 0.5rem;
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-        }
+pre>code {
+    font-family: monospace;
+}
+pre {
+    padding: 0.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow-x: scroll;
+}
 
-        .wrapper {
-            display: flex;
-            justify-content: center;
-        }
+.wrapper {
+    display: flex;
+    justify-content: center;
+}
 
-        .wrapper main {
-            width: 65ch;
-        }
+.wrapper main {
+    width: 65ch;
+}
 
-        .wrapper aside {
-            width: 20ch;
-        }
-    </style>
+.wrapper aside {
+    width: 20ch;
+}
+
+@media (max-width: 600px) {
+    .wrapper {
+        flex-direction: column;
+        max-width: 100%;
+    }
+    .wrapper main {
+        width: unset;
+        max-width: 100%;
+    }
+    .wrapper aside {
+        width: unset;
+        max-width: 100%;
+    }
+}</style>
 </head>
 
 <body>
