@@ -1,0 +1,95 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tawa</title>
+
+    <style>
+        * {
+            font-family: sans-serif;
+        }
+
+        pre>code {
+            font-family: monospace;
+        }
+        pre {
+            padding: 0.5rem;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        .wrapper {
+            display: flex;
+            justify-content: center;
+        }
+
+        .wrapper main {
+            width: 65ch;
+        }
+
+        .wrapper aside {
+            width: 20ch;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <aside><h4><a href="./index.html">Tawa</a></h4>
+
+<h5>Über</h5>
+
+
+<a href="./warum.html">Warum?</a> <br>
+<a href="./lernen.html">Tawa lernen</a> <br>
+<a href="https://github.com/tawasprache/kompilierer/releases/download/continuous/Tawa">Tawa für Linux herunterladen</a> <br>
+<a href="https://github.com/tawasprache">GitHub</a> <br>
+
+<h5>Paketen</h5>
+
+<a href="./Tawa:Debuggen.html">Tawa/Debuggen</a> <br>
+<a href="./Tawa:Eingebaut.html">Tawa/Eingebaut</a> <br>
+<a href="./Tawa:Folge.html">Tawa/Folge</a> <br>
+<a href="./Tawa:Liste.html">Tawa/Liste</a> <br>
+<a href="./Tawa:Vielleicht.html">Tawa/Vielleicht</a> <br>
+
+
+        </aside>
+        <main>
+            <h2>Tawa</h2>
+
+            <p>
+                Tawa ist eine einfache funktionale Programmieresprache.
+
+                Es sieht wie aus das:
+            </p>
+
+            <pre><code>paket Haupt zeigt alles
+
+typ Farbe ist
+    a: Vielleicht[Ganz]
+
+    | RGB(r: Ganz, g: Ganz, b: Ganz)
+    | HSV(h: Ganz, s: Ganz, v: Ganz)
+beende
+
+funk ZuRGB(f: Farbe)
+    passt f zu
+        #RGB(r, g, b) =&gt;
+            f
+
+        #HSV(h, s, v) =&gt;
+            #RGB(h, s, v) { a = f.a }
+    beende
+
+funk Haupt()
+    Debuggen:druck(
+        Liste:map([1, 2, 3], \(x: Ganz): Ganz =&gt; x + 1)
+    )</code></pre>
+
+                <p><a href="https://github.com/tawasprache/kompilierer/releases/download/continuous/Tawa">Tawa für Linux herunterladen</a></p>
+        </main>
+    </div>
+
+
+</body></html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tawa</title>
+
+    <style>
+        * {
+            font-family: sans-serif;
+        }
+
+        pre>code {
+            font-family: monospace;
+        }
+        pre {
+            padding: 0.5rem;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        .wrapper {
+            display: flex;
+            justify-content: center;
+        }
+
+        .wrapper main {
+            width: 65ch;
+        }
+
+        .wrapper aside {
+            width: 20ch;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <aside>
+
+        </aside>
+        <main>
+            <h2>Tawa / Lernen</h2>
+
+            <h3>Werten</h3>
+
+            Werten sind die Bausteine von Tawa. Das beinhaltet Dinge wie `42`, `#Wahr`, und `”Hallo!”`.
+
+            <h4>Ganze Zahlen</h4>
+
+            Tawa versteht nur ganze Zahlen. Man kann normale Arithmetik mit Tawa tun.
+
+            <pre><code>>>> 1 + 1
+2
+
+>>> 1 + 1 * 2
+3
+
+>>> (1 + 1) * 2
+4</code></pre>
+
+            <h4>Zeichenkette</h4>
+
+            Text ist durch Zeichenketten dargestellt.
+
+            Man kann zwei Zeichenketten verketten mit <code>++</code>.
+
+            <pre><code>>>> "hallo"
+"hallo"
+
+>>> "hallo" ++ "welt!"
+"hallowelt!"</code></pre>
+
+            <h3>Funktionen</h3>
+
+            Funktionen erlaubt man, Werten zu ändern.
+
+            <pre><code>funk Grüßen(name: Zeichenkette): Zeichenkette
+    "Hallo, " ++ name ++ "!"</code></pre>
+
+            <pre><code>>>> Grüßen("Jan")
+Hallo, Jan!</code></pre>
+
+            <h3>Typen</h3>
+
+            Typen erlaubt man, Werten zu gruppen.
+
+            Sie sieht wie aus das:
+            <pre><code>typ Mensch ist
+    name: Zeichenkette
+    alter: Ganz
+beende</code></pre>
+
+            <pre><code>>>> #Mensch { name = "Jan", alter = 18 }
+#Mensch { name = "Jan", alter = 18 }</code></pre>
+        </main>
+    </div>
+</body>
+
+</html>
