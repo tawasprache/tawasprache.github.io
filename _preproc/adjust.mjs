@@ -75,6 +75,10 @@ Promise.all(args.map(async (arg) => {
     const dom = new jsdom.JSDOM(data)
 
     const doku = dom.window.document
+    const elm = doku.createElement("meta")
+    elm.setAttribute("name", "description")
+    elm.setAttribute("content", "Einfache funktionale Programmiersprache.")
+    doku.querySelector("head").appendChild(elm)
     doku.querySelector("style").innerHTML = stylesheet
     doku.querySelectorAll("aside").forEach((elm) => {
         elm.innerHTML = sidebar + elm.innerHTML
